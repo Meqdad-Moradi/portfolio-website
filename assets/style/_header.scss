@@ -63,6 +63,11 @@
       padding-left: 2em;
       box-shadow: -0.5em 0 1em -0.9em rgba(0, 0, 0, 0.2);
       transform: translateX(100%);
+      transition: all .5s ease-in-out;
+
+      &.active {
+         transform: translateX(0);
+      }
    }
 
    .nav-list {
