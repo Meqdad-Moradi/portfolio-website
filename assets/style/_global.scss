@@ -36,7 +36,7 @@ h5,
 h6 {
    font-family: "Montserrat", sans-serif;
    font-weight: 500;
-   line-height: 1;
+   line-height: 1.3;
 }
 
 a {
@@ -45,6 +45,7 @@ a {
 
 p {
    margin-top: 1em;
+   color: $midGray;
 }
 
 ol,
@@ -64,6 +65,10 @@ button,
 textarea,
 select {
    font: inherit;
+}
+
+section {
+   padding-block: 4em;
 }
 
 .btn {
@@ -113,8 +118,51 @@ select {
    letter-spacing: 2px;
 }
 
+.section-title {
+   font-size: clamp(1.5rem, 2vw, 2.5rem);
+   text-transform: capitalize;
+   margin-bottom: 2em;
+   position: relative;
+
+   span {
+      display: block;
+   }
+
+   &::after {
+      content: "";
+      height: 3px;
+      width: 10%;
+      background-color: $green;
+      position: absolute;
+      left: 0;
+      bottom: -0.5em;
+   }
+}
+
 .container {
-   max-width: 1100px;
+   max-width: 1200px;
    margin: 0 auto;
    padding: 0 1em;
+}
+
+.card {
+   box-shadow: 5px 5px 10px -9px rgba($color: #000000, $alpha: 0.2);
+   background-color: $white;
+   border-radius: 0.3em;
+   overflow: hidden;
+   transition: all 1s ease;
+
+   .text {
+      padding: 2em;
+
+      h2 {
+         font-size: 1.25rem;
+         font-weight: 600;
+         text-transform: capitalize;
+      }
+   }
+
+   &:hover {
+      transform: scale(1.08);
+   }
 }

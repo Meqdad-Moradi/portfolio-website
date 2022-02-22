@@ -36,7 +36,7 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.3;
 }
 
 a {
@@ -45,6 +45,7 @@ a {
 
 p {
   margin-top: 1em;
+  color: #56565d;
 }
 
 ol,
@@ -64,6 +65,10 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+section {
+  padding-block: 4em;
 }
 
 .btn {
@@ -114,10 +119,56 @@ select {
   letter-spacing: 2px;
 }
 
+.section-title {
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  text-transform: capitalize;
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.section-title span {
+  display: block;
+}
+
+.section-title::after {
+  content: "";
+  height: 3px;
+  width: 10%;
+  background-color: #0fd74e;
+  position: absolute;
+  left: 0;
+  bottom: -0.5em;
+}
+
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1em;
+}
+
+.card {
+  -webkit-box-shadow: 5px 5px 10px -9px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 5px 10px -9px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 0.3em;
+  overflow: hidden;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.card .text {
+  padding: 2em;
+}
+
+.card .text h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.card:hover {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
 }
 
 #header {
@@ -223,6 +274,10 @@ select {
   overflow: hidden;
   -ms-grid-column-align: end;
       justify-self: end;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-animation: anim 1s ease-in-out forwards;
+          animation: anim 1s ease-in-out forwards;
 }
 
 #header .content-text {
@@ -234,6 +289,93 @@ select {
 #header .content-text .title {
   line-height: 1.2;
   text-transform: initial;
+  -webkit-transform: translate(-15px, 20px);
+          transform: translate(-15px, 20px);
+  opacity: 0;
+  -webkit-animation: animText 1.2s ease-in-out forwards;
+          animation: animText 1.2s ease-in-out forwards;
+}
+
+#header .content-text .sub-title {
+  -webkit-transform: translate(-15px, 20px);
+          transform: translate(-15px, 20px);
+  opacity: 0;
+  -webkit-animation: animText 1s ease-in-out forwards 0.5s;
+          animation: animText 1s ease-in-out forwards 0.5s;
+}
+
+#header .content-text .btn {
+  -webkit-transform: translate(-15px, 20px);
+          transform: translate(-15px, 20px);
+  opacity: 0;
+  -webkit-animation: animText 1s ease-in-out forwards 0.8s;
+          animation: animText 1s ease-in-out forwards 0.8s;
+}
+
+#header .content-text .secondary-btn {
+  -webkit-transform: translate(-15px, 20px);
+          transform: translate(-15px, 20px);
+  opacity: 0;
+  -webkit-animation: animText 1s ease-in-out forwards 1s;
+          animation: animText 1s ease-in-out forwards 1s;
+}
+
+@-webkit-keyframes anim {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes animText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes animText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
 }
 
 @media (max-width: 850px) {
@@ -352,6 +494,91 @@ select {
         -ms-flex-order: 1;
             order: 1;
   }
+}
+
+.card-content {
+  display: -ms-grid;
+  display: grid;
+  gap: 3em;
+  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 2em;
+}
+
+#work .filter-btns {
+  margin-bottom: 3em;
+}
+
+#work .filter-btns .btn {
+  border: none;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#work .filter-btns .btn:hover, #work .filter-btns .btn:active {
+  background-color: #0fd74e;
+}
+
+#work .filter-btns .btn.active {
+  background-color: #0fd74e;
+}
+
+#work .img-box {
+  position: relative;
+}
+
+#work .img-box:hover .card-links {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#work .card-links {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 50% auto auto 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2em;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+#work .card-links span {
+  display: inline-block;
+  font-size: 1.55em;
+  cursor: pointer;
+  color: #f9fafb;
 }
 
 .footer {
