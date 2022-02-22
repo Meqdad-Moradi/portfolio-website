@@ -44,7 +44,6 @@
          width: 25px;
          background-color: $dark;
          margin: 0.3em 0;
-         transform-origin: 22px;
          transition: all 0.3s ease-in-out;
       }
    }
@@ -85,6 +84,9 @@
    .toggler {
       display: grid !important;
       z-index: 1000;
+      span {
+         transform-origin: 22px;
+      }
 
       &.active {
          span:nth-of-type(1) {
