@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Rubik:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*::first-letter {
+  text-transform: uppercase;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #18181b;
+  background-color: #f9fafb;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 1;
+}
+
+a {
+  -webkit-text-decoration: auto;
+          text-decoration: auto;
+}
+
+p {
+  margin-top: 1em;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.title {
+  font-size: 3.375rem;
+  text-transform: capitalize;
+}
+
+.sub-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#header {
+  background: #f9fafb;
+  height: 70px;
+}
+
+#header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: inherit;
+}
+
+#header .logo .logo-link {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #bf44cf;
+  text-transform: uppercase;
+}
+
+#header .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3em;
+}
+
+#header .nav-list li {
+  text-transform: uppercase;
+}
+
+#header .nav-list a {
+  color: #313135;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#header .nav-list a:hover {
+  color: #bf44cf;
+}
+
+#header .toggler {
+  display: none;
+}
+
+#header .toggler span {
+  display: block;
+  height: 2px;
+  width: 25px;
+  background-color: #313135;
+  margin: 0.3em 0;
+  -webkit-transform-origin: 22px;
+          transform-origin: 22px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .toggler {
+    display: block;
+  }
+  .toggler span:nth-of-type(1) {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .toggler span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .toggler span:nth-of-type(3) {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+.footer {
+  padding: 2em 3em;
+  border-top: 1px solid #56565d;
+  background-color: #313135;
+}
+
+.footer p {
+  color: #7a7a85;
+  margin: 0;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
