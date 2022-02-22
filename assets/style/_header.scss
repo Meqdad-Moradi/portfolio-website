@@ -64,7 +64,7 @@
       justify-self: end;
 
       img {
-         width: clamp(200px, 100%, 400px);
+         // width: clamp(200px, 100%, 400px);
       }
    }
 
@@ -79,6 +79,25 @@
 }
 
 // media
+@media (max-width: 850px) {
+   // header content
+   #header {
+      .content {
+         display: grid;
+         grid-template-columns: 1fr;
+         gap: 0;
+      }
+
+      .img-box {
+         justify-self: center;
+      }
+
+      .content-text {
+         order: 1;
+      }
+   }
+}
+
 @media (max-width: 768px) {
    .nav {
       @include flex(column, center, start);
