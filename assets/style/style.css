@@ -103,8 +103,7 @@ select {
 }
 
 .title {
-  font-size: 3.375rem;
-  font-size: clamp(3rem, 3.375rem, 3.5rem);
+  font-size: clamp(2rem, 3.375vw, 3.5rem);
   text-transform: capitalize;
 }
 
@@ -116,7 +115,7 @@ select {
 }
 
 .container {
-  width: clamp(80%, 80vw, 1100px);
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 1em;
 }
@@ -218,12 +217,16 @@ select {
 }
 
 #header .img-box {
-  height: 400px;
-  width: 400px;
+  height: clamp(250px, 80vw, 400px);
+  width: clamp(250px, 80vw, 400px);
   border-radius: 100%;
   overflow: hidden;
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+#header .img-box img {
+  width: clamp(200px, 100%, 400px);
 }
 
 #header .content-text {
@@ -328,16 +331,11 @@ select {
   #header .img-box {
     -ms-grid-column-align: center;
         justify-self: center;
-    width: 300px;
-    height: 300px;
   }
   #header .content-text {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-  }
-  #header .content-text .title {
-    font-size: 3rem;
   }
 }
 

@@ -57,11 +57,15 @@
    }
 
    .img-box {
-      height: 400px;
-      width: 400px;
+      height: clamp(250px, 80vw, 400px);
+      width: clamp(250px, 80vw, 400px);
       border-radius: 100%;
       overflow: hidden;
       justify-self: end;
+
+      img {
+         width: clamp(200px, 100%, 400px);
+      }
    }
 
    .content-text {
@@ -139,16 +143,10 @@
 
       .img-box {
          justify-self: center;
-         width: 300px;
-         height: 300px;
       }
 
       .content-text {
          order: 1;
-
-         .title {
-            font-size: 3rem;
-         }
       }
    }
 }
