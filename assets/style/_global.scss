@@ -40,7 +40,7 @@ h6 {
 }
 
 a {
-   text-decoration: auto;
+   text-decoration: none;
 }
 
 p {
@@ -66,8 +66,44 @@ select {
    font: inherit;
 }
 
+.btn {
+   display: inline-block;
+   background-color: $green;
+   color: $black;
+   margin-top: 2em;
+   margin-right: 1em;
+   padding: 0.3em 1.5em;
+   border-radius: 0.3em;
+   text-transform: capitalize;
+   transition: all 0.3s ease-in-out;
+
+   &:hover {
+      background-color: lighten($color: $green, $amount: 8);
+   }
+
+   &:active {
+      background-color: darken($color: $green, $amount: 8);
+   }
+}
+
+.btn.secondary-btn {
+   background-color: transparent;
+   padding: calc(0.3em - 2px) 1.5em;
+   border: 2px solid $green;
+
+   &:hover {
+      background-color: lighten($color: $green, $amount: 8);
+      border-color: transparent;
+   }
+
+   &:active {
+      background-color: darken($color: $green, $amount: 8);
+   }
+}
+
 .title {
    font-size: 3.375rem;
+   font-size: clamp(3rem, 3.375rem , 3.5rem);
    text-transform: capitalize;
 }
 
