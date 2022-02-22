@@ -44,7 +44,7 @@
          width: 25px;
          border-radius: 5px;
          background-color: $dark;
-         margin: 3px 0;
+         margin: 2px 0;
          transition: all 0.3s ease-in-out;
       }
    }
@@ -62,8 +62,8 @@
       width: 70vw;
       padding-left: 2em;
       box-shadow: -0.5em 0 1em -0.9em rgba(0, 0, 0, 0.2);
-      transform: translateX(100%);
-      transition: all .5s ease-in-out;
+      transform: translateX(110%);
+      transition: all 0.5s ease-in-out;
 
       &.active {
          transform: translateX(0);
@@ -91,7 +91,7 @@
       display: grid !important;
       z-index: 1000;
       span {
-         transform-origin: 25.5px;
+         transform-origin: 1.39rem;
       }
 
       &.active {

@@ -160,7 +160,7 @@ select {
   width: 25px;
   border-radius: 5px;
   background-color: #313135;
-  margin: 3px 0;
+  margin: 2px 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -191,10 +191,10 @@ select {
     padding-left: 2em;
     -webkit-box-shadow: -0.5em 0 1em -0.9em rgba(0, 0, 0, 0.2);
             box-shadow: -0.5em 0 1em -0.9em rgba(0, 0, 0, 0.2);
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(110%);
+            transform: translateX(110%);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   .nav.active {
     -webkit-transform: translateX(0);
@@ -226,8 +226,8 @@ select {
     z-index: 1000;
   }
   .toggler span {
-    -webkit-transform-origin: 25.5px;
-            transform-origin: 25.5px;
+    -webkit-transform-origin: 1.39rem;
+            transform-origin: 1.39rem;
   }
   .toggler.active span:nth-of-type(1) {
     -webkit-transform: rotate(-45deg);
