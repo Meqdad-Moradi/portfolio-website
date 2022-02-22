@@ -82,14 +82,16 @@ select {
 .container {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 1em;
 }
 
 #header {
   background: #f9fafb;
-  height: 70px;
+  min-height: 100vh;
+  background: url("./../images/bgWhite.png") no-repeat center center/cover;
 }
 
-#header .container {
+#header .navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,7 +107,7 @@ select {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: inherit;
+  min-height: 70px;
 }
 
 #header .logo .logo-link {
@@ -165,17 +167,67 @@ select {
 }
 
 @media (max-width: 768px) {
-  .toggler {
-    display: block;
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #f9fafb;
+    min-height: 100vh;
+    width: 70vw;
+    padding-left: 2em;
+    -webkit-box-shadow: -0.5em 0 1em -0.9em rgba(0, 0, 0, 0.2);
+            box-shadow: -0.5em 0 1em -0.9em rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
-  .toggler span:nth-of-type(1) {
+  .nav-list {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: start !important;
+    gap: 0 !important;
+    width: 100%;
+  }
+  .nav-list li {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+  }
+  .nav-list a {
+    width: 100%;
+    padding: 1em 0;
+  }
+  .toggler {
+    display: -ms-grid !important;
+    display: grid !important;
+    z-index: 1000;
+  }
+  .toggler.active span:nth-of-type(1) {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
   }
-  .toggler span:nth-of-type(2) {
+  .toggler.active span:nth-of-type(2) {
     opacity: 0;
   }
-  .toggler span:nth-of-type(3) {
+  .toggler.active span:nth-of-type(3) {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
   }

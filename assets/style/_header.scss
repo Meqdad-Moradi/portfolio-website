@@ -1,10 +1,11 @@
 #header {
    background: $light;
-   height: 70px;
+   min-height: 100vh;
+   background: url("./../images/bgWhite.png") no-repeat center center / cover;
 
-   .container {
+   .navigation {
       @include flex();
-      height: inherit;
+      min-height: 70px;
    }
 
    .logo {
@@ -51,17 +52,50 @@
 
 // media
 @media (max-width: 768px) {
-   .toggler {
-      display: block;
+   .nav {
+      @include flex(column, center, start);
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: $light;
+      min-height: 100vh;
+      width: 70vw;
+      padding-left: 2em;
+      box-shadow: -0.5em 0 1em -0.9em rgba(0, 0, 0, 0.2);
+      transform: translateX(100%);
+   }
 
-      span:nth-of-type(1) {
-         transform: rotate(-45deg);
+   .nav-list {
+      flex-direction: column !important;
+      align-items: start !important;
+      gap: 0 !important;
+      width: 100%;
+
+      li {
+         width: 100%;
+         display: grid;
       }
-      span:nth-of-type(2) {
-         opacity: 0;
+
+      a {
+         width: 100%;
+         padding: 1em 0;
       }
-      span:nth-of-type(3) {
-         transform: rotate(45deg);
+   }
+
+   .toggler {
+      display: grid !important;
+      z-index: 1000;
+
+      &.active {
+         span:nth-of-type(1) {
+            transform: rotate(-45deg);
+         }
+         span:nth-of-type(2) {
+            opacity: 0;
+         }
+         span:nth-of-type(3) {
+            transform: rotate(45deg);
+         }
       }
    }
 }
