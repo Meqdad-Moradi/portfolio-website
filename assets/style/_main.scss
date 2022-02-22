@@ -4,14 +4,19 @@
 }
 
 #work {
+   .section-title {
+      margin-bottom: 1em;
+   }
+
    .filter-btns {
+      @include flex($jc: start);
+      flex-wrap: wrap;
       margin-bottom: 3em;
       .btn {
          border: none;
          outline: none;
          user-select: none;
          background-color: $white;
-         // color: $light;
          cursor: pointer;
          text-transform: uppercase;
 
@@ -20,7 +25,7 @@
             background-color: $green;
          }
 
-         &.active{
+         &.active {
             background-color: $green;
          }
       }
