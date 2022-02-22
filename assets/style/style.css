@@ -108,7 +108,7 @@ section {
 }
 
 .title {
-  font-size: clamp(2.375rem, 3.375vw, 3.5rem);
+  font-size: clamp(2.375rem, 3.375vw, 3rem);
   text-transform: capitalize;
 }
 
@@ -265,6 +265,7 @@ section {
       -ms-flex-align: center;
           align-items: center;
   min-height: calc(100vh - 70px);
+  gap: 0;
 }
 
 #header .img-box {

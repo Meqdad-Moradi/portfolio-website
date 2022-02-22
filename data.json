@@ -1,0 +1,58 @@
+[
+   {
+      "id": 1,
+      "image": "./assets/images/about01.png",
+      "title": "project #01",
+      "disc": "Lorem ipsum dolor sit, amet consectetur elit.",
+      "category": "web app"
+   },
+   {
+      "id": 2,
+      "image": "./assets/images/about02.png",
+      "title": "project #02",
+      "disc": "Lorem ipsum dolor sit, amet consectetur elit.",
+      "category": "web app"
+   },
+   {
+      "id": 3,
+      "image": "./assets/images/about03.png",
+      "title": "project #03",
+      "disc": "Lorem ipsum dolor sit, amet consectetur elit.",
+      "category": "react js"
+   },
+   {
+      "id": 4,
+      "image": "./assets/images/about04.png",
+      "title": "project #04",
+      "disc": "Lorem ipsum dolor sit, amet consectetur elit.",
+      "category": "react js"
+   },
+   {
+      "id": 5,
+      "image": "./assets/images/about02.png",
+      "title": "project #05",
+      "disc": "Lorem ipsum dolor sit, amet consectetur elit.",
+      "category": "mobile app"
+   },
+   {
+      "id": 6,
+      "image": "./assets/images/about03.png",
+      "title": "project #06",
+      "disc": "Lorem ipsum dolor sit, amet consectetur elit.",
+      "category": "mobile app"
+   },
+   {
+      "id": 7,
+      "image": "./assets/images/about04.png",
+      "title": "project #07",
+      "disc": "Lorem ipsum dolor sit, amet consectetur elit.",
+      "category": "ui/ux"
+   },
+   {
+      "id": 8,
+      "image": "./assets/images/about01.png",
+      "title": "project #08",
+      "disc": "Lorem ipsum dolor sit, amet consectetur elit.",
+      "category": "ui/ux"
+   }
+]

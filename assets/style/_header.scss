@@ -54,6 +54,7 @@
    .content {
       @include grid($ai: center);
       min-height: calc(100vh - 70px);
+      gap: 0;
    }
 
    .img-box {
@@ -62,8 +63,6 @@
       border-radius: 100%;
       overflow: hidden;
       justify-self: end;
-      // opacity: 0;
-
       transform: scale(0.5);
       animation: anim 1s ease-in-out forwards;
    }
