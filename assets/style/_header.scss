@@ -151,6 +151,7 @@
       position: fixed;
       top: 0;
       right: 0;
+      z-index: 1000;
       background-color: $light;
       min-height: 100vh;
       width: 70vw;
@@ -183,7 +184,7 @@
 
    .toggler {
       display: grid !important;
-      z-index: 1000;
+      z-index: 10000;
       span {
          transform-origin: 1.39rem;
       }
