@@ -317,8 +317,8 @@ section {
   -webkit-transform: translate(-15px, 20px);
           transform: translate(-15px, 20px);
   opacity: 0;
-  -webkit-animation: animText 1s ease-in-out forwards 1s;
-          animation: animText 1s ease-in-out forwards 1s;
+  -webkit-animation: animText 1s ease-in-out forwards 1.3s;
+          animation: animText 1s ease-in-out forwards 1.3s;
 }
 
 @-webkit-keyframes anim {

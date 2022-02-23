@@ -13,15 +13,20 @@ toggler.addEventListener("click", (e) => {
 // work
 /// select works elements
 const filterBtnsDiv = document.querySelector(".filter-btns");
-// const filterBtns = Array.from(filterBtnsDiv.children);
 const projectSection = document.querySelector("#projects");
 
 // get projects data from json file
+const URL =
+   "https://raw.githubusercontent.com/Meqdad-Moradi/portfolio-website/main/data.json";
 const getData = async () => {
-   const response = await fetch("./data.json");
-   const data = await response.json();
-   renderData(data);
-   renderFilterBtns(data);
+   try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      renderData(data);
+      renderFilterBtns(data);
+   } catch (error) {
+      console.log(error);
+   }
 };
 
 // read data form json file and set card item
@@ -56,38 +61,44 @@ const renderData = (data) => {
 const renderFilterBtns = (data) => {
    filterBtnsDiv.innerHTML = "";
 
-   const filteredBtns = data.reduce(
-      (item, value) => {
-         if (!item.includes(value.category)) {
-            item.push(value.category);
-         }
-         return item;
-      },
-      ["all"]
-   );
-
-   const btns = filteredBtns
-      .map((btn) => {
+   const btns = data
+      .reduce(
+         (item, value) => {
+            if (!item.includes(value.category)) {
+               item.push(value.category);
+            }
+            return item;
+         },
+         ["all"]
+      )
+      .map((item) => {
          return `
-      <button class="btn">${btn}</button>`;
+            <button class="btn" data-id="${item}">${item}</button>`;
       })
       .join("");
 
    filterBtnsDiv.innerHTML = btns;
 
    const filterBtns = document.querySelectorAll(".filter-btns .btn");
-   setActive(filterBtns);
+   setActive(filterBtns, data);
 };
 
 // set active class to filter buttons
-const setActive = (btns) => {
-   // by default all button is active
-   btns[0].classList.add("active");
-
+const setActive = (btns, data) => {
+   btns[0].classList.add("active"); // by default ALL-BUTTON is active
    btns.forEach((btn) =>
       btn.addEventListener("click", (e) => {
+         const id = e.currentTarget.dataset.id;
+         const filterList = data.filter((item) => item.category === id); // filter the projet list by clicking a button
+
          btns.forEach((btn) => btn.classList.remove("active"));
          e.currentTarget.classList.add("active");
+
+         if (id == "all") {
+            renderData(data);
+         } else {
+            renderData(filterList);
+         }
       })
    );
 };
