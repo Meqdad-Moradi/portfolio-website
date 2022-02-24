@@ -80,12 +80,13 @@ const renderFilterBtns = (data) => {
    filterBtnsDiv.innerHTML = btns;
 
    const filterBtns = document.querySelectorAll(".filter-btns .btn");
-   setActive(filterBtns, data);
+   filterProjects(filterBtns, data);
 };
 
 // set active class to filter buttons
-const setActive = (btns, data) => {
-   btns[0].classList.add("active"); // by default ALL-BUTTON is active
+const filterProjects = (btns, data) => {
+   btns[0].classList.add("active");
+
    btns.forEach((btn) =>
       btn.addEventListener("click", (e) => {
          const id = e.currentTarget.dataset.id;
@@ -94,7 +95,7 @@ const setActive = (btns, data) => {
          btns.forEach((btn) => btn.classList.remove("active"));
          e.currentTarget.classList.add("active");
 
-         if (id == "all") {
+         if (id === "all") {
             renderData(data);
          } else {
             renderData(filterList);

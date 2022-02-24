@@ -605,9 +605,9 @@ section {
 }
 
 .footer {
-  padding: 2em 3em;
+  padding: 4em 0;
   border-top: 1px solid #56565d;
-  background-color: #313135;
+  background-color: #18181b;
 }
 
 .footer p {
